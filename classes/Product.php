@@ -256,9 +256,9 @@
         /**
          * @return bool
          */
-        public function showHouseholdProduct()
+        public function showBuah()
         {
-            return $this->db->select("SELECT * FROM ecom_product WHERE catid = 6 ORDER BY proid LIMIT 3");
+            return $this->db->select("SELECT * FROM ecom_product WHERE catid = 11 ORDER BY proid LIMIT 3");
         }
 
         /**

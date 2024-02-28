@@ -20,6 +20,9 @@
                     <li role="presentation">
                         <a href="#food" role="tab" id="food-tab" data-toggle="tab" aria-controls="video">frozen food</a>
                     </li>
+                    <li role="presentation">
+                        <a href="#Buah" role="tab" id="Buah-tab" data-toggle="tab" aria-controls="video">Buah</a>
+                    </li>
                  </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
@@ -94,9 +97,9 @@
                             <div class="clearfix"> </div>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tv" aria-labelledby="tv-tab">
+                    <div role="tabpanel" class="tab-pane fade" id="Buah" aria-labelledby="Buah-tab">
                         <div class="agile_ecommerce_tabs">
-                            <?php $allPro = $productObject->showHouseholdProduct(); if ($allPro): ?>
+                            <?php $allPro = $productObject->showBuah(); if ($allPro): ?>
                                 <?php while ($mobile = $allPro->fetch_assoc()): ?>
                                     <div class="col-md-4 agile_ecommerce_tab_left">
                                         <div class="hs-wrapper">
