@@ -322,7 +322,7 @@ global $cat;
                                             <h4> Kode wilayah : </h4>
                                             <h4> No phone            : </h4>
                                             <h4> Alamat          : </h4>
-                                            <h4> Kota             : </h4>
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -334,7 +334,6 @@ global $cat;
                                                     <h4> <?php echo $info['zip'] ?> </h4>
                                                     <h4> <?php echo $info['phone'] ?> </h4>
                                                     <h4> <?php echo $info['country'] ?> </h4>
-                                                    <h4> <?php echo $info['city'] ?> </h4>
                                                 <?php endwhile; ?>
                                             <?php endif; ?>
                                         </div>
@@ -357,10 +356,7 @@ global $cat;
                                                             <label for="email">E-mail:</label>
                                                             <input type="email" class="form-control" id="email" name="email" value="<?php echo $userEmail = $info['email'] ?>" />
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="zip">City Zip-Code:</label>
-                                                            <input type="text" class="form-control" id="zip" name="zip" value="<?php if (strcmp( $info['zip'], "NULL") == 0) echo "Empty"; else echo $info['zip']; ?>" />
-                                                        </div>
+                                                      
                                                         <div class="form-group">
                                                             <label for="phone">Phone:</label>
                                                             <input type="text" class="form-control" id="phone" name="phone" value="<?php if (strcmp( $info['phone'], "NULL") == 0) echo "Empty"; else echo $info['phone'];?>" />
@@ -373,10 +369,7 @@ global $cat;
                                                             <label for="country">Country:</label>
                                                             <input type="text" class="form-control" id="country" name="country" value="<?php if (strcmp( $info['country'], "NULL") == 0) echo "Empty"; else echo $info['country'];?>" />
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="city"> City:</label>
-                                                            <input type="text" class="form-control" id="city" name="city" value="<?php if (strcmp( $info['city'], "NULL") == 0) echo "Empty"; else echo $info['city'];?>" />
-                                                        </div>
+                                                       
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-default w3ls-cart" name="update" > <i class="fa fa-thumbs-o-up"></i> Update</button>
                                                         </div>

@@ -140,7 +140,7 @@
                                                 </div>
                                             </div>
                                             <?php if ( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['create']) ): ?>
-                                                <?php $userObject->registerUser($_POST['Name'], $_POST['Email'], $_POST['Phone'], $_POST['Password'], $_POST['rePassword']); ?>
+                                                <?php $userObject->registerUser($_POST['Name'], $_POST['Email'], $_POST['Phone'],$_POST['zip'],$_POST['country'], $_POST['Password'], $_POST['rePassword']); ?>
                                             <?php endif; ?>
                                             <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                                 <div class="facts">
@@ -149,6 +149,8 @@
                                                             <input placeholder="Name" name="Name" type="text" >
                                                             <input placeholder="Email Address" name="Email" type="email"  />
                                                             <input placeholder="Phone Number" name="Phone" type="text" style="margin-top: 15px" />
+                                                            <input placeholder="kode wilayah" name="zip" type="text" style="margin-top: 15px" />
+                                                            <input placeholder="Alamat" name="country" type="text" style="margin-top: 15px" />
                                                             <input placeholder="Password" name="Password" type="password"  />
                                                             <input placeholder="Confirm Password" name="rePassword" type="password"  />
                                                             <div class="sign-up">

@@ -25,7 +25,7 @@
                                                             <label for="name">Name:</label>
                                                             <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name'] ?>" />
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div class="formgit u-group">
                                                             <label for="email">E-mail:</label>
                                                             <input type="email" class="form-control" id="email" name="email" value="<?php echo $userEmail = $info['email'] ?>" />
                                                         </div>

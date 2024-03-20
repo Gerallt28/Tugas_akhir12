@@ -29,26 +29,32 @@
          * @param $name
          * @param $email
          * @param $phone
+         * @param $zip
+         * @param $country
          * @param $pass
          * @param $rePass
          */
-        public function registerUser($name, $email, $phone, $pass, $rePass)
+        public function registerUser($name, $email, $phone,$zip ,$country, $pass, $rePass)
         {
             $name   = $this->fm->validation($name);
             $email  = $this->fm->validation($email);
             $phone  = $this->fm->validation($phone);
+            $zip= $this->fm->validation($zip);
+            $country= $this->fm->validation($country);
             $pass   = $this->fm->validation($pass);
             $rePass = $this->fm->validation($rePass);
 
             $name   = mysqli_real_escape_string($this->db->link, $name);
             $email  = mysqli_real_escape_string($this->db->link, $email);
             $phone  = mysqli_real_escape_string($this->db->link, $phone);
+            $zip   = mysqli_real_escape_string($this->db->link, $zip);
+            $country   = mysqli_real_escape_string($this->db->link, $country);
             $pass   = mysqli_real_escape_string($this->db->link, $pass);
             $rePass = mysqli_real_escape_string($this->db->link, $rePass);
 
             $date = date('y-m-d');
 
-            if (empty($name) || empty($email) || empty($phone) || empty($pass) || empty($rePass) )
+            if (empty($name) || empty($email) || empty($phone) || empty($zip) ||empty($country) || empty($pass) || empty($rePass) )
             {
                 echo "<div class='alert alert-danger alert-dismissable'>
                           <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -81,7 +87,7 @@
                         {
                             $pass   = md5($pass);
 
-                            $this->db->insert("INSERT INTO ecom_customer( name,  email,  image,  pass,  date, phone) VALUES ('$name', '$email', 'NULL','$pass', '$date', '$phone')");
+                            $this->db->insert("INSERT INTO ecom_customer( name,  email,  image,  pass,   country, zip, phone) VALUES ('$name', '$email', 'NULL','$pass', '$country', '$zip', '$phone')");
                         }
                     }
                 }
@@ -145,14 +151,12 @@
             $zip     = $this->fm->validation($data['zip']);
             $phone   = $this->fm->validation($data['phone']);
             $country = $this->fm->validation($data['country']);
-            $city    = $this->fm->validation($data['city']);
 
             $name    = mysqli_real_escape_string($this->db->link, $name);
             $email   = mysqli_real_escape_string($this->db->link, $email);
             $zip     = mysqli_real_escape_string($this->db->link, $zip);
             $phone   = mysqli_real_escape_string($this->db->link, $phone);
             $country = mysqli_real_escape_string($this->db->link, $country);
-            $city    = mysqli_real_escape_string($this->db->link, $city);
 
             if (empty($name) || empty($email) || empty($zip) || empty($phone) || empty($country) || empty($city) )
             {
