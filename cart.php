@@ -159,7 +159,7 @@
     </div>
     <!-- //navigation -->
     <!--banner-->
-  <img src="images/slider-01.jpg" alt="" width="100%" height="46%">
+  <img src="images/slider-01.jpg" alt="" width="100%" height="500">
 			<h2>Product Description</h2>
 		</div>
     </div>
@@ -256,8 +256,8 @@
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 pull-right hover">
                         <div class="cart-info" style="background-color: #d9edf7; padding: 15%;box-shadow: 5px 4px 18px #888888;border-radius: 3%; font-weight: 700">
                             <p> Total Price :  Rp.<?php echo $total; Session::set("total", $total); ?>  </p>
-                            <p> Vat :  5% </p>
-                            <p>Total With Vat :  Rp.<?php echo ($total+(($total*5)/100)); ?> </p>
+                            <p>diskon :  5% </p>
+                            <p>Total With Vat :  Rp.<?php echo ($total-(($total*5)/100)); ?> </p>
                         </div>
                         <div class="checkout-button" style="box-shadow: 5px 4px 18px #888888;">
                             <a class="btn btn-block btn-warning text-capitalize" href="payment.php">checkout</a>

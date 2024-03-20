@@ -42,7 +42,7 @@
 	
 	<!-- banner -->
 	<div>
-		<img src="images/slider-01.jpg" alt="" width="100%" height="46%">
+		<img src="images/slider-01.jpg" alt="" width="100%" height="500">
 			<h2></h2>
 		</div>
 	</div>

@@ -209,7 +209,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div id="slides" class="cover-slides">
 		<ul class="slides-container">
 			<li class="text-center">
-				<img src="images/slider-01.jpg" alt="" width="100%" height="46%">
+				<img src="images/slider-01.jpg" alt="" width="100%" height="500">
 				<div class="container">	
 					<div class="row">
 					<li class="text-center">
