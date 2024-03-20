@@ -45,10 +45,7 @@
                                                             <label for="country">alaamat:</label>
                                                             <input type="text" class="form-control" id="country" name="country" value="<?php if (strcmp( $info['country'], "NULL") == 0) echo "Empty"; else echo $info['country'];?>" />
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="city"> kota:</label>
-                                                            <input type="text" class="form-control" id="city" name="city" value="<?php if (strcmp( $info['city'], "NULL") == 0) echo "Empty"; else echo $info['city'];?>" />
-                                                        </div>
+                                                     
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-default w3ls-cart" name="update" > <i class="fa fa-thumbs-o-up"></i> Update</button>
                                                         </div>
