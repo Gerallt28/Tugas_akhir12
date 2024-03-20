@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2024 at 04:54 AM
+-- Generation Time: Mar 17, 2024 at 06:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,8 @@ CREATE TABLE `ecom_admin` (
 INSERT INTO `ecom_admin` (`id`, `adminfastname`, `adminlastname`, `adminemail`, `level`, `adminpass`) VALUES
 (1, 'Tushar', 'Khan', 'tushar@gmail.com', 'uploads/c5494226b1.jpg', '1'),
 (3, 'admin', 'admin', 'admin@gmail.com', 'uploads/f25d75e10c.jpg', '21232f297a57a5a743894a0e4a801fc3'),
-(4, 'gerallt', 'putra', 'gerallt@gmail.com', 'uploads/290f036e18.jpg', '81dc9bdb52d04dc20036dbd8313ed055');
+(4, 'gerallt', 'putra', 'gerallt@gmail.com', 'uploads/290f036e18.jpg', '81dc9bdb52d04dc20036dbd8313ed055'),
+(5, 'gerallt', 'putra', 'gerallt1450@gmail.com', 'uploads/7d2db58dd3.jpg', '028c415bbd78ec445b0559fd9e7ef94e');
 
 -- --------------------------------------------------------
 
@@ -216,7 +217,7 @@ CREATE TABLE `ecom_product` (
   `catid` int(11) NOT NULL,
   `brandid` int(11) NOT NULL,
   `body` text NOT NULL,
-  `price` float NOT NULL,
+  `price` varchar(225) NOT NULL,
   `image` varchar(200) NOT NULL,
   `type` varchar(11) NOT NULL,
   `date` date DEFAULT NULL
@@ -227,19 +228,22 @@ CREATE TABLE `ecom_product` (
 --
 
 INSERT INTO `ecom_product` (`proid`, `proname`, `catid`, `brandid`, `body`, `price`, `image`, `type`, `date`) VALUES
-(19, 'Daging Kambing', 1, 4, 'daging kambing yng dijual per kilo', 90000, 'uploads/994fc4eafc.jpg', 'Daging', '2023-10-16'),
-(21, 'sayur kol', 9, 5, 'kembang kool per', 20000, 'uploads/7736962182.jpg', 'sayur', '2023-10-17'),
-(22, 'nuget champ', 10, 4, 'Daging champ 250gr', 30000, 'uploads/e71d8c17e3.png', 'Daging', '2023-11-28'),
-(23, 'KANZLER SINGLES BAKS', 10, 4, 'KANZLER SINGLES BAKSO PEDAS 55GR HOT MEATBALL SINGLE HALAL', 7500, 'uploads/783dbad5d4.png', 'Bakso', '2024-01-07'),
-(24, 'Kanzler Beef Cocktai', 10, 4, 'Sosis Kanzler Beef CocktailSOSIS SAPI PREMIUM EXTRA MEATYVarian Cocktail 250 GramSosis yang terbuat dari daging premium yang dicincang halus dengan ukuran lebih kecil. Dibuat dengan metode pengasapan, pengeringan dan pemasakan dengan uap. Tanpa menggunakan MSG dan bahan pewarna.Cara Pengolahan: Produk telah dimasak sebelumnya. Panaskan dengan sedikit minyak di atas te?on (dipanggang) atau panaskan dengan microwave.\r\n\r\n\r\nNOTE :\r\n\r\n* Kami Sarankan pengiriman menggunakan Kurir GRAB/GOJEK INSTAN ATAU SAMEDAY\r\n\r\n* CHECK OUT DENGAN KURIR STANDART tetap akan kami proses dengan CATATAN :\r\n\r\n   *** Segala Resiko kerusakan produk akibat keterlambatan pengiriman di luar tanggung jawan kami/seller\r\n\r\n* TIDAK TERIMA KOMPLAIN APAPUN karena produk yang kami jual adalah Fresh Stok de ngan kondisi Bekudan Selalu Baru\r\n\r\n\r\n* MEMBELI adalah SETUJU \r\n\r\n\r\nterima kasih\r\n\r\n\r\nHappy Shopping', 42600, 'uploads/f0fdcf5c08.png', 'sosis', '2024-01-07'),
-(25, 'Boneless Chicken Bre', 1, 4, 'Boneless Chicken Breast Skinless / Dada Ayam Fillet Tanpa Kulit 1kg\r\nBoneless Chicken Breast Skinless / Dada Ayam Fillet Tanpa Kulit 1kg\r\n\r\nBiasa disebut juga fillet dada ayam. Sudah bersih dari tulang dan kulit. Bagian ayam yang tinggi protein dan rendah lemak.\r\n\r\nKEUNGGULAN Ayam ini dibandingkan ayam2 lainnya :\r\n- Telah memiliki sertifikasi Halal dari MUI.\r\n- Telah memiliki sertifikasi NKV (Nomor Kontrol Veteriner, yaitu sertifikat sebagai bukti tertulis sah atas dipenuhinya persyaratan hygiene-sanitasi sebagai kelayakan dasar jaminan keamanan pangan asal hewan pada unit usaha pangan asal hewan).\r\n- Telah memiliki sertifikat Food Safety bertaraf Nasional untuk memastikan produk ini aman untuk dikonsumsi.\r\n\r\nAyam broiler ini memiliki nutrisi dan protein yg tinggi sehingga cocok diolah menjadi berbagai menu seperti : Ayam Teriyaki, Ayam Saus Tiram , Ayam Crispy, Steak Ayam ,dll\r\n\r\nPROSES PEMBEKUAN:\r\n- Pembekuan dilakukan dengan teknik blasting pada suhu -25°C, blasting adalah teknik pembekuan dengan semburan suhu yang sangat rendah untuk mempercepat terjadinya pembekuan, sehingga dapat menjaga kandungan nutrisi dan protein dengan sangat baik.\r\n\r\nDETAIL PRODUK\r\nASAL : Lokal\r\nBERAT : 1kg (saat beku).\r\nPOTONGAN : fillet dada tanpa kulit dan tulang.\r\nKONDISI : frozen.\r\nKEMASAN : packing menggunakan plastik PE ketat, lalu dilapis dengan plastik wrap food grade.\r\nHALAL MUI : 00020068900514\r\nSERTIFIKAT NKV : RPHU-3201240-002\r\n\r\nTANPA BAHAN PENGAWET / PEWARNA', 46900, 'uploads/3b49c1a4ff.png', 'Ayam', '2024-01-07'),
-(26, 'cabai rawit merah1kg', 9, 5, 'Cabai atau Cabe Rawit Merah\r\nBerat Produk 1 kilo\r\n\r\nDitimbang menggunakan Digital scale\r\n\r\nHarga sayur mayur fluktuafif mengikuti harga pasaran ya\r\n\r\nKarena produk segar maka hanya bisa dikirimkan menggunakan SAMEDAY / INSTANT. belum bisa menggunakan ekspedisi\r\n\r\nSilahkan mampir toko kita untuk melihat produk lainnya ya.', 63400, 'uploads/95279d6226.png', 'sayur', '2024-01-07'),
-(27, 'Tomat merah -1kg', 9, 5, 'Bosen dapat tomat yang selalu busuk saat beli di pasar ,sudah ganti langanan masih Busuk,Tenang saja kini hadir Tomat yang fresh ,harga terjangkkau dan yang lebih penting lagi tidak menggunakan pestisida dalam perawatannya jadi tunggu apa lagi beli lah tomat ini hanya di coollcash', 15000, 'uploads/fd7a9371ce.png', 'sayur', '2024-01-07'),
-(28, 'Bayam 1 ikat', 9, 5, 'sering beli bayem di pasar tapi daun nya berlubang  ?,udah sering ganti penjul masih sama jugaa,tenang tidak usah panik kareana coolcash telah menghadirkan bayam dengan kondisi bersih ,harga terjangkau dan paling penting tidak berlubang tunggu apa lagi segeralah cekout di website ini nyaa', 2000, 'uploads/60b32c02d4.png', 'sayur', '2024-01-07'),
-(29, 'Nanas', 11, 7, 'Nanas Madu Kupas (1pcs): Harga Rp10.500 per buah', 10500, 'uploads/30882d7a55.jpg', 'Buah', '2024-02-28'),
-(30, 'Apel fuji 1kg', 11, 7, 'ABOVE (A Box Of Vegetables) Apel Fuji Biasa - 1 kg\r\n\r\nApel fuji menunjukkan jika konsumsi jus apel ini sangat baik untuk mencegah penyakit alzheimer. Apel fuji mampu mengurangi efek penuaan yang terjadi di dalam otak dengan meningkatkan kadar asetilkolin neurotransmitter.\r\n\r\nManfaat apel fuji selanjutnya adalah baik untuk mengikat kadar lemak dalam usus. Alhasil, kolesterol tinggi bisa dihindari dengan catatan anda mengonsumsi apel fuji secara rutin.\r\n\r\n1 kg isi 5 - 6 buah\r\n\r\n=========================================\r\n\r\nInfo Pengiriman ABOVE (A Box of Vegetables):\r\n1. Order yang masuk pukul 00.00-14.59 akan dikirimkan H+1\r\n2. Order yang masuk pukul 15.00-23.59 akan dikirimkan H+2\r\n3. Untuk pengiriman ditiadakan pada Hari Minggu, namun tetap bisa melakukan pemesanan dan akan dikirimkan pada Hari Senin\r\n4. Pengiriman akan dilakukan dengan menggunakan mitra kurir logistik kami agar menjaga kualitas produk kami hingga ke tangan customer', 38500, 'uploads/2b04a29309.jpg', 'Buah', '2024-02-28'),
-(31, 'Timun Segar 500 gr', 9, 5, 'Timun segar per 500 gr, fresh setiap hari.\r\n\r\nProduk2 kami merupakan produk fresh, sehingga harus menggunakan jasa kirim Gosend same day/instant/grab express', 7000, 'uploads/a90bd9592e.jpg', 'sayur', '2024-02-28'),
-(32, 'Jagung Manis - Sayur', 9, 5, 'Kondisi: Baru\r\nMin. Pemesanan: 1 Buah\r\nEtalase: Sayur\r\nJagung yang disediakan Sayur Kendal , sudah melalui proses Quality Control untuk memastikan, pangan ini sudah dalam kualitas terbaik, agar kamu dapat merasakan manfaat dari Jagung, yaitu:\r\n\r\n1. Mengatasi konstipasi\r\n2. Menurunkan risiko diabetes dan mengontrol kadar gula darah\r\n3. Baik untuk kesehatan jantung\r\n4. Mengatasi depresi\r\n5. Baik untuk kesehatan mata\r\n6. Mencegah penyakit divertikulosis\r\n\r\nProduk ini tersedia dalam berbagai varian ukuran.\r\n\r\nProduk Sayur Kendal diolah dengan perlakuan Organik sehingga setiap produk kami segar dan berkualitas', 10500, 'uploads/2e52602419.jpeg', 'sayur', '2024-02-28');
+(19, 'Daging Kambing', 1, 4, 'daging kambing yng dijual per kilo', '90.000', 'uploads/994fc4eafc.jpg', 'Daging', '2024-03-01'),
+(21, 'sayur kol', 9, 5, 'kembang kool per', '20.000', 'uploads/7736962182.jpg', 'sayur', '2024-03-01'),
+(22, 'nuget champ', 10, 4, 'Daging champ 250gr', '30.000', 'uploads/e71d8c17e3.png', 'Daging', '2024-03-01'),
+(23, 'KANZLER SINGLES BAKS', 10, 4, 'KANZLER SINGLES BAKSO PEDAS 55GR HOT MEATBALL SINGLE HALAL', '7500', 'uploads/783dbad5d4.png', 'Bakso', '2024-01-07'),
+(24, 'Kanzler Beef Cocktai', 10, 4, 'Sosis Kanzler Beef CocktailSOSIS SAPI PREMIUM EXTRA MEATYVarian Cocktail 250 GramSosis yang terbuat dari daging premium yang dicincang halus dengan ukuran lebih kecil. Dibuat dengan metode pengasapan, pengeringan dan pemasakan dengan uap. Tanpa menggunakan MSG dan bahan pewarna.Cara Pengolahan: Produk telah dimasak sebelumnya. Panaskan dengan sedikit minyak di atas te?on (dipanggang) atau panaskan dengan microwave.\r\n\r\n\r\nNOTE :\r\n\r\n* Kami Sarankan pengiriman menggunakan Kurir GRAB/GOJEK INSTAN ATAU SAMEDAY\r\n\r\n* CHECK OUT DENGAN KURIR STANDART tetap akan kami proses dengan CATATAN :\r\n\r\n   *** Segala Resiko kerusakan produk akibat keterlambatan pengiriman di luar tanggung jawan kami/seller\r\n\r\n* TIDAK TERIMA KOMPLAIN APAPUN karena produk yang kami jual adalah Fresh Stok de ngan kondisi Bekudan Selalu Baru\r\n\r\n\r\n* MEMBELI adalah SETUJU \r\n\r\n\r\nterima kasih\r\n\r\n\r\nHappy Shopping', '42.600', 'uploads/f0fdcf5c08.png', 'sosis', '2024-03-01'),
+(25, 'Boneless Chicken Bre', 1, 4, 'Boneless Chicken Breast Skinless / Dada Ayam Fillet Tanpa Kulit 1kg\r\nBoneless Chicken Breast Skinless / Dada Ayam Fillet Tanpa Kulit 1kg\r\n\r\nBiasa disebut juga fillet dada ayam. Sudah bersih dari tulang dan kulit. Bagian ayam yang tinggi protein dan rendah lemak.\r\n\r\nKEUNGGULAN Ayam ini dibandingkan ayam2 lainnya :\r\n- Telah memiliki sertifikasi Halal dari MUI.\r\n- Telah memiliki sertifikasi NKV (Nomor Kontrol Veteriner, yaitu sertifikat sebagai bukti tertulis sah atas dipenuhinya persyaratan hygiene-sanitasi sebagai kelayakan dasar jaminan keamanan pangan asal hewan pada unit usaha pangan asal hewan).\r\n- Telah memiliki sertifikat Food Safety bertaraf Nasional untuk memastikan produk ini aman untuk dikonsumsi.\r\n\r\nAyam broiler ini memiliki nutrisi dan protein yg tinggi sehingga cocok diolah menjadi berbagai menu seperti : Ayam Teriyaki, Ayam Saus Tiram , Ayam Crispy, Steak Ayam ,dll\r\n\r\nPROSES PEMBEKUAN:\r\n- Pembekuan dilakukan dengan teknik blasting pada suhu -25°C, blasting adalah teknik pembekuan dengan semburan suhu yang sangat rendah untuk mempercepat terjadinya pembekuan, sehingga dapat menjaga kandungan nutrisi dan protein dengan sangat baik.\r\n\r\nDETAIL PRODUK\r\nASAL : Lokal\r\nBERAT : 1kg (saat beku).\r\nPOTONGAN : fillet dada tanpa kulit dan tulang.\r\nKONDISI : frozen.\r\nKEMASAN : packing menggunakan plastik PE ketat, lalu dilapis dengan plastik wrap food grade.\r\nHALAL MUI : 00020068900514\r\nSERTIFIKAT NKV : RPHU-3201240-002\r\n\r\nTANPA BAHAN PENGAWET / PEWARNA', '47.000', 'uploads/3b49c1a4ff.png', 'Ayam', '2024-03-01'),
+(26, 'cabai rawit merah1kg', 9, 5, 'Cabai atau Cabe Rawit Merah\r\nBerat Produk 1 kilo\r\n\r\nDitimbang menggunakan Digital scale\r\n\r\nHarga sayur mayur fluktuafif mengikuti harga pasaran ya\r\n\r\nKarena produk segar maka hanya bisa dikirimkan menggunakan SAMEDAY / INSTANT. belum bisa menggunakan ekspedisi\r\n\r\nSilahkan mampir toko kita untuk melihat produk lainnya ya.', '63.000', 'uploads/95279d6226.png', 'sayur', '2024-03-01'),
+(27, 'Tomat merah -1kg', 9, 5, 'Bosen dapat tomat yang selalu busuk saat beli di pasar ,sudah ganti langanan masih Busuk,Tenang saja kini hadir Tomat yang fresh ,harga terjangkkau dan yang lebih penting lagi tidak menggunakan pestisida dalam perawatannya jadi tunggu apa lagi beli lah tomat ini hanya di coollcash', '15.000', 'uploads/fd7a9371ce.png', 'sayur', '2024-03-01'),
+(28, 'Bayam 1 ikat', 9, 5, 'sering beli bayem di pasar tapi daun nya berlubang  ?,udah sering ganti penjul masih sama jugaa,tenang tidak usah panik kareana coolcash telah menghadirkan bayam dengan kondisi bersih ,harga terjangkau dan paling penting tidak berlubang tunggu apa lagi segeralah cekout di website ini nyaa', '2000', 'uploads/60b32c02d4.png', 'sayur', '2024-01-07'),
+(29, 'Nanas', 11, 7, 'Nanas Madu Kupas (1pcs): Harga Rp10.500 per buah', '10.500', 'uploads/30882d7a55.jpg', 'Buah', '2024-03-01'),
+(30, 'Apel fuji 1kg', 11, 7, 'ABOVE (A Box Of Vegetables) Apel Fuji Biasa - 1 kg\r\n\r\nApel fuji menunjukkan jika konsumsi jus apel ini sangat baik untuk mencegah penyakit alzheimer. Apel fuji mampu mengurangi efek penuaan yang terjadi di dalam otak dengan meningkatkan kadar asetilkolin neurotransmitter.\r\n\r\nManfaat apel fuji selanjutnya adalah baik untuk mengikat kadar lemak dalam usus. Alhasil, kolesterol tinggi bisa dihindari dengan catatan anda mengonsumsi apel fuji secara rutin.\r\n\r\n1 kg isi 5 - 6 buah\r\n\r\n=========================================\r\n\r\nInfo Pengiriman ABOVE (A Box of Vegetables):\r\n1. Order yang masuk pukul 00.00-14.59 akan dikirimkan H+1\r\n2. Order yang masuk pukul 15.00-23.59 akan dikirimkan H+2\r\n3. Untuk pengiriman ditiadakan pada Hari Minggu, namun tetap bisa melakukan pemesanan dan akan dikirimkan pada Hari Senin\r\n4. Pengiriman akan dilakukan dengan menggunakan mitra kurir logistik kami agar menjaga kualitas produk kami hingga ke tangan customer', '38.500', 'uploads/2b04a29309.jpg', 'Buah', '2024-03-01'),
+(31, 'Timun Segar 500 gr', 9, 5, 'Timun segar per 500 gr, fresh setiap hari.\r\n\r\nProduk2 kami merupakan produk fresh, sehingga harus menggunakan jasa kirim Gosend same day/instant/grab express', '7000', 'uploads/a90bd9592e.jpg', 'sayur', '2024-02-28'),
+(32, 'Jagung Manis - Sayur', 9, 5, 'Kondisi: Baru\r\nMin. Pemesanan: 1 Buah\r\nEtalase: Sayur\r\nJagung yang disediakan Sayur Kendal , sudah melalui proses Quality Control untuk memastikan, pangan ini sudah dalam kualitas terbaik, agar kamu dapat merasakan manfaat dari Jagung, yaitu:\r\n\r\n1. Mengatasi konstipasi\r\n2. Menurunkan risiko diabetes dan mengontrol kadar gula darah\r\n3. Baik untuk kesehatan jantung\r\n4. Mengatasi depresi\r\n5. Baik untuk kesehatan mata\r\n6. Mencegah penyakit divertikulosis\r\n\r\nProduk ini tersedia dalam berbagai varian ukuran.\r\n\r\nProduk Sayur Kendal diolah dengan perlakuan Organik sehingga setiap produk kami segar dan berkualitas', '10.500', 'uploads/2e52602419.jpeg', 'sayur', '2024-03-01'),
+(33, 'melon', 11, 7, 'melon segar 1 buah', '38.900', 'uploads/d5cfa94373.png', 'buah', '2024-03-08'),
+(34, 'Pisang Sunpride', 11, 7, 'Pisang Sunpride Canvendish Family Sun Fresh - 300-400gr', '10.000', 'uploads/773044978f.png', 'buah', '2024-03-08'),
+(35, 'Kentang 1 kg', 9, 5, 'Kentang Segar Ukuran Besar\r\nKemasan 1 kg\r\nper kg isi 5-8 butir kentang kondisi segar\r\nasal lokal', '40.000', 'uploads/6474e11ed6.png', 'sayur', '2024-03-08');
 
 -- --------------------------------------------------------
 
@@ -366,7 +370,7 @@ ALTER TABLE `ecom_social_media`
 -- AUTO_INCREMENT for table `ecom_admin`
 --
 ALTER TABLE `ecom_admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ecom_admin_message`
@@ -414,7 +418,7 @@ ALTER TABLE `ecom_customer_order`
 -- AUTO_INCREMENT for table `ecom_product`
 --
 ALTER TABLE `ecom_product`
-  MODIFY `proid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `proid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `ecom_product_review`
