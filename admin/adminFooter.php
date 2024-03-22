@@ -10,7 +10,6 @@
 
                 <footer>
                     <div class="pull-right">
-                        Gentelella - Bootstrap Admin Template by <a href="https://www.facebook.com/glbaba.tushar">Tushar Khan</a>
                     </div>
                     <div class="clearfix"></div>
                 </footer>

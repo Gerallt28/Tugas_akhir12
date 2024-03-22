@@ -77,10 +77,14 @@
                 <?php endif; ?>
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 pull-right hover">
                         <div class="cart-info" style="background-color: #d9edf7; padding: 15%;box-shadow: 5px 4px 18px #888888;border-radius: 3%; font-weight: 700">
-                            <p> Total Price :  Rp.<?php echo $total; Session::set("total", $total); ?>  </p>
-                            <p> Vat :  5% </p>
-                            <p>Total With Vat :  Rp.<?php echo ($total+(($total*5)/100)); ?> </p>
-                        </div>
+                        <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti pembayaran</label>
+                                    <div class="btn-group col-md-6 col-sm-6 col-xs-12">
+                                        <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                        <input type="file" data-role="magic-overlay" name="image" data-target="#pictureBtn" data-edit="insertImage" />
+                                    </div>
+                                </div>
+                    </div>
                         <div class="checkout-button" style="box-shadow: 5px 4px 18px #888888;">
                             <a class="btn btn-block btn-warning text-capitalize" href="?orderNow=order">order</a>
                         </div>

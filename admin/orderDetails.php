@@ -97,7 +97,7 @@
                                             <td class="text-center">Rp.<?php echo ($allPro['quantity']*$allPro['price']) ?></td>
                                             <?php $image = $productObject->getProductById($allPro['productid']); if ($image): ?>
                                                 <?php while ($proImage = $image->fetch_assoc()):  ?>
-                                                    <td class="text-center"><img src="<?php echo $proImage['image'] ?>" alt="" style="height: 50%;" class="img-responsive"></td>
+                                                    <td class="text-center"><img src="<?php echo $proImage['image'] ?>" alt="" style="width: 20%;" class="img-responsive"></td>
                                                 <?php endwhile; ?>
                                             <?php endif; ?>
                                             <td class="text-center"><?php echo $formateObject->formatDate($allPro['date']); ?></td>
