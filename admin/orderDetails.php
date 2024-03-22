@@ -98,7 +98,8 @@
                                             <?php $image = $productObject->getProductById($allPro['productid']); if ($image): ?>
                                                 <?php while ($proImage = $image->fetch_assoc()):  ?>
                                                     <td class="text-center"><img src="<?php echo $proImage['image'] ?>" alt="" style="width: 20%;" class="img-responsive"></td>
-                                                <?php endwhile; ?>
+                                               
+                                                    <?php endwhile; ?>
                                             <?php endif; ?>
                                             <td class="text-center"><?php echo $formateObject->formatDate($allPro['date']); ?></td>
                                             <td class="text-center">
