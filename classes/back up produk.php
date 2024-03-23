@@ -7,6 +7,7 @@
  * Time: 5:33 AM
  */
 ?>
+
 <?php
     $filePath = realpath(dirname(__FILE__));
     include_once $filePath.'/../lib/Database.php';
@@ -46,6 +47,10 @@
          * @param mixed $image
          * @return void
          */
+
+         
+
+
         public function insertProduct($data, $image)
         {
             $proName        = $this->fm->validation($data['product']);
@@ -283,7 +288,10 @@
         {
             return $this->db->select("SELECT * FROM ecom_product WHERE proid = '$id'");
         }
-
+        public function getorderById($id)
+        {
+            return $this->db->select("SELECT * FROM customer_order WHERE bukti by id = '$id'");
+        }
         /**
          * @param $proRev
          * @return bool
@@ -305,6 +313,53 @@
         /**
          * @param $customerId
          */
+        function upload() {
+
+            $namaFile = $_FILES["gambar"]["name"];
+            $ukuranFile = $_FILES["gambar"]["size"];
+            $error = $_FILES["gambar"]["error"];
+            $tmpName = $_FILES["gambar"]["tmp_name"];
+        
+            // cek apakah tidak ada gambar yang diupload
+            if($error === 4) {
+                echo "<script>
+                        alert('pilih gambar terlebih dahulu');
+                    </script>";
+                return false; 
+            }
+        
+            // cek apakah yang diupload adalah gambar
+             $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+             $ekstensiGambar = explode('.', $namaFile);
+             $ekstensiGambar = strtolower(end($ekstensiGambar));
+             if( !in_array($ekstensiGambar, $ekstensiGambarValid) ) {
+                echo "<script>
+                        alert('yang anda upload bukan gambar!');
+                    </script>";
+                return false; 
+             }
+        
+            //  cek jika ukurannx terlalu besar
+            if( $ukuranFile > 2000000 ) {
+                echo "<script>
+                        alert('ukuran gambar terlalu besar!');
+                    </script>";
+                return false; 
+            }
+        
+            // jika lolos pengecekan, gambar siap diupload
+            // generate nama gambar baru
+            $namaFileBaru = uniqid();
+            $namaFileBaru .= '.';
+            $namaFileBaru .= $ekstensiGambar;
+        
+            move_uploaded_file($tmpName, 'Gambar/' . $namaFileBaru);
+        
+            return $namaFileBaru;
+            
+        }
+        
+
         public function orderProductByCustomerId($customerId)
         {
             $sessionId = session_id();
@@ -320,7 +375,7 @@
                     $productQuantity = $getProduct['quantity'];
 
                     //Inserting Product to Order Table
-                    $this->db->insert("INSERT INTO ecom_customer_order(customerid, productid, price, quantity, productname) VALUES ('$customerId','$productId','$productPrice','$productQuantity','$productName')");
+                    $this->db->insert("INSERT INTO ecom_customer_order(customerid, productid, price, quantity, productname, bukti VALUES ('$customerId','$productId','$productPrice','$productQuantity','$productName')");
 
                     echo "<script>window.location = 'success.php' </script>";
                 }
