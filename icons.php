@@ -136,15 +136,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="w3l_logo">
 				<h1><a href="index.php">cool cash<span>Your stores. Your place.</span></a></h1>
 			</div>
-			<div class="search">
-				<input class="search_box" type="checkbox" id="search_box">
-				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
-				<div class="search_form">
-					<form action="#" method="post">
-						<input type="text" name="Search" placeholder="Search...">
-						<input type="submit" value="Send">
-					</form>
-				</div>
+		
 			</div>
 			<div class="cart cart box_1"> 
 				<form action="#" method="post" class="last"> 
@@ -809,7 +801,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								
 										<div class="icon-box col-md-3 col-sm-4"><a class="agile-icon" href="#wheelchair"><i class="fa fa-wheelchair"></i> fa-wheelchair</a></div>
 								
-										<div class="icon-box col-md-3 col-sm-4"><a class="agile-icon" href="#wrench"><i class="fa fa-wrench"></i> fa-wrench</a></div>
 										<div class="clearfix"></div>
 									</div> 
 									<div class="title margin-top">

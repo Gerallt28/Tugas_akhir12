@@ -210,12 +210,7 @@
                             }
                         ?>
                     <?php endif;  ?>
-                    <div class="search_form">
-                        <form action="#" method="post">
-                            <input type="text" name="Search" placeholder="Search Product..." />
-                            <input type="submit" value="Send" name="search" />
-                        </form>
-                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -1,9 +1,15 @@
-<?php $koneksi =new mysqli("localhost" ,"root","","ecom");?>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Tushar Khan
+ * Date: 9/21/2017
+ * Time: 5:50 PM
+ */
+?>
 
 <?php
     include 'header.php';
     global $total;
-    
 ?>
 
     <!--banner-->
@@ -22,11 +28,9 @@
             </ul>
         </div>
     </div>
-    <?php ?>
     <?php if (isset($_GET['orderNow']) && $_GET['orderNow'] == 'order' ):  ?>
         <?php $productObject->orderProductByCustomerId(Session::get("userId")); $cartObject->deleteCart(); ?>
     <?php endif; ?>
-   
     <!-- //breadcrumbs -->
     <div class="single">
         <div class="container">
@@ -37,13 +41,12 @@
                             <table class="table">
                                 <thead class="table table-bordered">
                                 <tr>
-                                    <th class="text-center" style="width: 16.66%;">#</th>
+                                    <th class="text-center" style="width: 16.66%;">No</th>
                                     <th class="text-center" style="width: 16.66%;">Name</th>
                                     <th class="text-center" style="width: 16.66%;">Price</th>
                                     <th class="text-center" style="width: 16.66%;">Quantity</th>
                                     <th class="text-center" style="width: 16.66%;">Total Price</th>
                                     <th class="text-center" style="width: 16.66%;">Image</th>
-                                    <th class="text-center" style="width: 16.66%;">pembayaran</th>
                                 </tr>
                                 </thead>
 
@@ -58,10 +61,7 @@
                                         <td class="text-center">
                                             <img src="admin/<?php echo $allCart['image']; ?>" title="<?php echo $allCart['proname']; ?>" alt="" class="img-rounded img-responsive" style="height: 65%;width: 70%;" />
                                         </td>
-                                        <td>
-                                        <a href="pembayaran.php?=<?php echo $pecah['id'];?>" class="btn-danger btn">pembayaran</a>
-                                        </td>
-                                        </tr>
+                                    </tr>
                                 <?php endwhile; ?>
                                 </tbody>
                             </table>
@@ -75,31 +75,21 @@
                           </div>";
                     ?>
                 <?php endif; ?>
-                                </div>
-            </div>
-       </div>
-       
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 pull-right hover">
                         <div class="cart-info" style="background-color: #d9edf7; padding: 15%;box-shadow: 5px 4px 18px #888888;border-radius: 3%; font-weight: 700">
-                        <div class="form-group">
-                                    <!-- <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti pembayaran</label> -->
-                                <?php $ambil=$koneksi->query("SELECT * FROM ecom_customer_order where customerid='customerid'" );?>
-                                 <?php while($pecah = $ambil->fetch_array()){?>
-                                        <a href="pembayaran.php?=<?php echo $pecah['customerid'];?>" class="btn-danger btn">pembayaran</a>
-                                    <?php }  ?>
-                                    
-                        </div>  
+                            <p> Total Price :  Rp.<?php echo $total; Session::set("total", $total); ?>  </p>
+                            <p> Diskon :  5% </p>
+                            <p>Total With Vat :  Rp.<?php echo ($total-(($total*5)/100)); ?> </p>
+                            <p> Metode Cash On Delivery </p>
+
+                        </div>
                         <div class="checkout-button" style="box-shadow: 5px 4px 18px #888888;">
                             <a class="btn btn-block btn-warning text-capitalize" href="?orderNow=order">order</a>
-                    </div> 
-                </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
-
-  
- 
-
 <?php
     include 'footer.php';
 ?>

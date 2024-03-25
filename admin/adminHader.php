@@ -98,10 +98,7 @@
                                 <li><a href="addCat.php"><i class="fa fa-archive"></i> Add Category</a></li>
                                 <li><a href="addBrand.php"><i class="fa fa-bank"></i> Add Brand</a></li>
                                 <li><a href="addProduct.php"><i class="fa fa-database"></i> Add Product </a></li>
-                                <li><a href="inbox.php"> <i class="fa fa-inbox"></i> Inbox</a></li>
-
-                                <li><a href="website.php"> <i class="fa fa-credit-card"></i> Website Information </a></li>
-                            </ul>
+                                </ul>
                         </div>
 <!--                        <div class="menu_section">-->
 <!--                            <h3>Live On</h3>-->
@@ -192,9 +189,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li>
-                                        <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
+                                     
                                         </a>
                                     </li>
                                     <?php
@@ -210,9 +205,6 @@
 
                             <!--=================-->
                             <li role="presentation" class="dropdown">
-                                <a href="inbox.php" class="dropdown-toggle info-number">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green"><?php echo $messageRow = mysqli_num_rows($messageobject->getAllMessage());  ?></span>
                                 </a>
                             </li>
                             <!--=================-->
