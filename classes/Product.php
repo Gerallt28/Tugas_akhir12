@@ -312,9 +312,10 @@
                     $productId = $getProduct['proid'];
                     $productPrice = $getProduct['price'];
                     $productQuantity = $getProduct['quantity'];
+                    $pembayaran = $getProduct['gambar'];
 
                     //Inserting Product to Order Table
-                    $this->db->insert("INSERT INTO ecom_customer_order(customerid, productid, price, quantity, productname) VALUES ('$customerId','$productId','$productPrice','$productQuantity','$productName')");
+                    $this->db->insert("INSERT INTO ecom_customer_order(customerid, productid, price, quantity, productname, gambar) VALUES ('$customerId','$productId','$productPrice','$productQuantity','$productName','$pembayaran')");
 
                     echo "<script>window.location = 'success.php' </script>";
                 }
@@ -328,6 +329,7 @@
         public function allOrderProduct()
         {
             return $this->db->select("SELECT * FROM ecom_customer_order ORDER BY id");
+            
         }
 
         /**

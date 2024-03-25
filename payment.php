@@ -1,15 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Tushar Khan
- * Date: 9/21/2017
- * Time: 5:50 PM
- */
-?>
+<?php $koneksi =new mysqli("localhost" ,"root","","ecom");?>
 
 <?php
     include 'header.php';
     global $total;
+    
 ?>
 
     <!--banner-->
@@ -28,9 +22,11 @@
             </ul>
         </div>
     </div>
+    <?php ?>
     <?php if (isset($_GET['orderNow']) && $_GET['orderNow'] == 'order' ):  ?>
         <?php $productObject->orderProductByCustomerId(Session::get("userId")); $cartObject->deleteCart(); ?>
     <?php endif; ?>
+   
     <!-- //breadcrumbs -->
     <div class="single">
         <div class="container">
@@ -47,6 +43,7 @@
                                     <th class="text-center" style="width: 16.66%;">Quantity</th>
                                     <th class="text-center" style="width: 16.66%;">Total Price</th>
                                     <th class="text-center" style="width: 16.66%;">Image</th>
+                                    <th class="text-center" style="width: 16.66%;">pembayaran</th>
                                 </tr>
                                 </thead>
 
@@ -61,7 +58,10 @@
                                         <td class="text-center">
                                             <img src="admin/<?php echo $allCart['image']; ?>" title="<?php echo $allCart['proname']; ?>" alt="" class="img-rounded img-responsive" style="height: 65%;width: 70%;" />
                                         </td>
-                                    </tr>
+                                        <td>
+                                        <a href="pembayaran.php?=<?php echo $pecah['id'];?>" class="btn-danger btn">pembayaran</a>
+                                        </td>
+                                        </tr>
                                 <?php endwhile; ?>
                                 </tbody>
                             </table>
@@ -75,56 +75,31 @@
                           </div>";
                     ?>
                 <?php endif; ?>
-                <?php
- if (isset($_POST['simpan'])) {
-        //gambar akan di simpan di folder gambar
-        $target_path = $tempdir . basename($_FILES['bukti']);
-
-        //nama gambar
-        $nama_gambar=$_FILES['bukti'];
-        //ukuran gambar
-        $ukuran_gambar = $_FILES['bukti']; 
-
-        $fileinfo = @getimagesize($_FILES["bukti"]);
-        //lebar gambar
-        $width = $fileinfo[0];
-        //tinggi gambar
-        $height = $fileinfo[1]; 
-        if($ukuran_gambar > 81920){ 
-            echo 'Ukuran gambar melebihi 80kb';
-        }else if ($width > "480" || $height > "640") {
-             echo 'Ukuran gambar harus 480x640';
-        }else{
-            if (move_uploaded_file($_FILES['bukti'], $target_path)) {
-                
-                $sql=mysql_query("INSERT INTO ecom_customer_order(bukti) VALUES('".$_POST['bukti']."', '".$nama_gambar."')");
-                echo 'Simpan data berhasil';
-            } else {
-                echo 'Simpan data gagal';
-            }
-        } 
- }
-?>
-
-
-
+                                </div>
+            </div>
+       </div>
+       
                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 pull-right hover">
                         <div class="cart-info" style="background-color: #d9edf7; padding: 15%;box-shadow: 5px 4px 18px #888888;border-radius: 3%; font-weight: 700">
                         <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti pembayaran</label>
-                                    <div class="btn-group col-md-6 col-sm-6 col-xs-12">
-                                        <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                        <input type="file" data-role="magic-overlay" name="image" data-target="#pictureBtn" data-edit="insertImage" />
-                                    </div>
-                                </div>
-                    </div>
+                                    <!-- <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti pembayaran</label> -->
+                                <?php $ambil=$koneksi->query("SELECT * FROM ecom_customer_order where customerid='customerid'" );?>
+                                 <?php while($pecah = $ambil->fetch_array()){?>
+                                        <a href="pembayaran.php?=<?php echo $pecah['customerid'];?>" class="btn-danger btn">pembayaran</a>
+                                    <?php }  ?>
+                                    
+                        </div>  
                         <div class="checkout-button" style="box-shadow: 5px 4px 18px #888888;">
                             <a class="btn btn-block btn-warning text-capitalize" href="?orderNow=order">order</a>
-                        </div>
-                    </div>
+                    </div> 
+                </div>
             </div>
         </div>
     </div>
+
+  
+ 
+
 <?php
     include 'footer.php';
 ?>

@@ -77,7 +77,6 @@
                                         <th class="text-center">Image</th>
                                         <th class="text-center">Date</th>
                                         <th class="text-center">Action</th>
-                                        <th class="text-center">Bukti</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -110,7 +109,6 @@
                                                     <a href="?pending=<?php echo $allPro['id']; ?>" class="btn btn-round btn-danger"> <i class="fa fa-delicious"></i> Pending</a>
                                                 <?php endif; ?>
                                             </td>
-                                            <td><img src="images/<?= $row["image"] ;?>" width="30%"> </td>
 
                                         </tr>
                                     <?php endwhile; ?>

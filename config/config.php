@@ -14,6 +14,8 @@ $servername = "localhost";
 $database = "ecom";
 $username = "root";
 $password = "";
- 
-// untuk tulisan bercetak tebal silakan sesuaikan dengan detail database Anda
-// membuat koneksi
+ ?>
+
+<?php
+$koneksi =new mysqli("localhost" ,"root","","ecom");
+?>
